@@ -16,6 +16,7 @@ class ExtendedSiteInformation extends SiteInformationForm {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $site_config = $this->config('system.site');
     $form = parent::buildForm($form, $form_state);
+    // Adding siteapikey as textfield.
     $form['site_information']['siteapikey'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Site API Key'),
@@ -30,6 +31,7 @@ class ExtendedSiteInformation extends SiteInformationForm {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    // Storing the siteapikey value in configurations.
     $this->config('system.site')
       ->set('siteapikey', $form_state->getValue('siteapikey'))
       ->save();
