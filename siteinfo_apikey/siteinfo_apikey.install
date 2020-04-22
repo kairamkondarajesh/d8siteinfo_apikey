@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the SiteInfo API Key module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function siteinfo_apikey_uninstall() {
+  \Drupal::configFactory()->getEditable('system.site')->clear('siteapikey')->save();
+}

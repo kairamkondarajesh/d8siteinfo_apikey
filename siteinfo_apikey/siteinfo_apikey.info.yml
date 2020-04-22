@@ -1,0 +1,4 @@
+name: Site Info API Key
+type: module
+description: 'Configure Site API keys and using in Json response.'
+core: 8.x

@@ -1,0 +1,7 @@
+siteinfo_apikey_page_json:
+  path: 'page_json/{siteinfo_apikey}/{nid}'
+  defaults:
+    _title: 'Node page as JSON'
+    _controller: '\Drupal\siteinfo_apikey\Controller\NodePageJSONController::nodeJson'
+  requirements:
+    _permission: 'access content'
